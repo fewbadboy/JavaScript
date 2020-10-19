@@ -16,3 +16,10 @@ git remote add origin https://github.com/fewbadboy/JavaScript.git
 git branch -M main
 git push -u origin main
 ```
+
+## Git
+```shell
+git branch --help # doc branch
+git checkout -b main # git branch main  git checkout main 
+git branch -r -d xxx/xxx # delete remote-tracking branch xxx/xxx
+```
