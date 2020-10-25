@@ -4,32 +4,32 @@ function Node(element){
     this.next = null
 }
 
-function DLinkList(){
+function TwoWayLinkedList(){
     this.head = new Node('head')
 }
 
-DLinkList.prototype.find = function(item){
+TwoWayLinkedList.prototype.find = function(item){
     let curNode = this.head
     while(curNode.element !== item){
         curNode = curNode.next
     }
     return curNode
 }
-DLinkList.prototype.insert = function(newElemnt, item){
+TwoWayLinkedList.prototype.insert = function(newElemnt, item){
     let newNode = new Node(newElemnt)
     var current = this.find(item)
     newNode.previous = current
     newNode.next = current.next
     current.next = newNode
 }
-DLinkList.prototype.findPrevious = function(item){
+TwoWayLinkedList.prototype.findPrevious = function(item){
     let curNode = this.head
     while(curNode.next !== null && curNode.next.element !== item){
         curNode = curNode.next
     }
     return curNode
 }
-DLinkList.prototype.remove = function(item){
+TwoWayLinkedList.prototype.remove = function(item){
     let current = this.find(item)
     if(current.next !== null){
         current.previous.next = current.next
@@ -38,7 +38,7 @@ DLinkList.prototype.remove = function(item){
         current.previous = null
     }
 }
-DLinkList.prototype.display = function(){
+TwoWayLinkedList.prototype.display = function(){
     let curNode = this.head
     while(curNode.next !== null){
         console.log(curNode.next.element)
@@ -46,7 +46,7 @@ DLinkList.prototype.display = function(){
     }
 }
 
-DLinkList.prototype.findLast = function(){
+TwoWayLinkedList.prototype.findLast = function(){
     let curNode = this.head
     while(curNode.next !== null){
         curNode  = curNode.next
@@ -54,7 +54,7 @@ DLinkList.prototype.findLast = function(){
     return curNode
 }
 
-DLinkList.prototype.dispReverse = function(){
+TwoWayLinkedList.prototype.dispReverse = function(){
     let curNode = this.head
     curNode = this.findLast()
     while(curNode.previous !== null){
