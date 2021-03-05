@@ -1,25 +1,12 @@
 
-## …or create a new repository on the command line
-```shell
-echo "# JavaScript" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/fewbadboy/JavaScript.git
-git push -u origin main
+## 上标
+
+```
+⁰ ¹ ² ³ ⁴ ⁵ ⁶ ⁷ ⁸ ⁹
 ```
 
-## …or push an existing repository from the command line
-```shell
-git remote add origin https://github.com/fewbadboy/JavaScript.git
-git branch -M main
-git push -u origin main
-```
+## 下标
 
-## Git
-```shell
-git branch --help # doc branch
-git checkout -b main # git branch main  git checkout main 
-git branch -r -d xxx/xxx # delete remote-tracking branch xxx/xxx
+```
+₀ ₁ ₂ ₃ ₄ ₅ ₆ ₇ ₈ ₉
 ```
