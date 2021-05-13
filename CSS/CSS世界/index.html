@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            padding: 10px;
+            background-color: #cd0000;
+            text-align: center;
+        }
+        .box > img {
+            float: left;
+        }
+
+        .clear:after {
+            content: "";
+            display: block; /* table/list-item */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clear">
+        <img src="demo.jpg">
+    </div>
+    <div class="box" style="width: 240px;">
+        <p style="display: inline-block; text-align: left;">我是中国人------------五十六个名族</p>
+    </div>
+    <div class="box" style="width: 0;">
+        <p style="display: inline-block; text-align: left;">我是中国人------------五十六个名族</p>
+    </div>
+</body>
+</html>
