@@ -27,7 +27,11 @@ React 将使用 props 和 ref 作为参数来调用此函数。
 
 ## Hook
 Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
-Hook 是完全可选的，100%向后兼容， 16.8.0就可以使用
+Hook 是完全可选的，100%向后兼容， 16.8.0就可以使用。
+
+**只在最顶层使用Hook**
+**不要在循环，条件或嵌套函数中调用 Hook** 确保总是在你的 React 函数的最顶层以及任何 return 之前调用他们
+**只在 React 函数中调用 Hook**
 1. useState
 ```js
 import React, { useState } from 'react';
@@ -58,6 +62,8 @@ function Example() {
 2. useEffect
 useEffect 就是一个 Effect Hook，给函数组件增加了操作副作用的能力。它跟 class 组件中的 componentDidMount、componentDidUpdate 和 componentWillUnmount 具有相同的用途
 
+可以定义多个useEffect() 去使用不同的effect
+
 ```js
 import React, { useState, useEffect } from 'react';
 
@@ -83,14 +89,30 @@ function FriendStatus(props) {
 ```
 useEffect返回一个函数是清除机制(订阅外部数据源。这种情况下，清除工作是非常重要的，可以防止引起内存泄露！)
 
+*解释每次更新的时候都运行Effect*: 为什么effect的清除阶段在每次渲染都重新渲染都重新执行
+
+`忘记正确地处理 componentDidUpdate 是 React 应用中常见的 bug 来源`
+
+**提示: 通过跳过 Effect 进行性能优化**
+ componentDidUpdate 中添加对 prevProps 或 prevState 的比较逻辑解决
+这是很常见的需求，所以它被内置到了 useEffect 的 Hook API 中。如果某些特定值在两次重渲染之间没有发生变化，你可以通知 React 跳过对 effect 的调用，只要传递数组作为 useEffect 的第二个可选参数即可：
+```js
+useEffect(() => {
+  document.title = `You clicked ${count} times`;
+}, [count]); // 仅在 count 更改时更新
+```
 3. useContext
+`const value = useContext(MyContext);`
 
 4. useReducer
-
+useState 的替代方案
 5. useCallback
 
 6. useMemo
-
+允许你通过「记住」上一次计算结果的方式在多次渲染的之间缓存计算结果
+```js
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
 7. useRef
 
 8. useImperativeHandle
