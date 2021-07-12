@@ -88,5 +88,49 @@ rwx 读4、写2、可执行1 三个一组，没响应的权限会出现-
 ## vim
 - 命令模式
 - 输入模式
-- 底线命令模式
+- 底线命令模式 命令模式 按 :
 
+Esc 进入命令模式 i 编辑模式 
+
+常用：
+- ctrl f 向下一页，d 半页
+- ctrl b 向上一页，u 半页
+- /word 光标之下搜索word字符串
+- gg 移动到文档的第一行
+- G 移动到文档最好一行
+- 0 移动到光标行的第一个字符
+- G 移动到光标行的最后一个字符
+- n Enter 光标移动n行
+- :1,$s/word1/word2/g 第一行到最后一行，word1替换成word2
+- dd 删除鼠标所在的哪行
+- ndd n数字 删除光标下n行
+- yy 赋值游标所在的那一行
+- nyy
+- u 复原前一个动作
+- ctrl r 重复上一个动作
+- . 重复前一个动作
+
+## yum/apt RPM包管理
+yum: 红帽系列
+- yum check-update
+- yum update
+- yum install package_name
+- yum update package_name
+- yum list
+- yum remove package_name
+- yum clean packages/headers/oldheaders
+
+apt: Debian系列
+- sudo apt update package_name ...
+- sudo apt upgrade
+- sudo apt list 
+- sudo apt full-upgrade
+- sudo apt install package_name ...
+- sudo apt show package_name
+- sudo apt remove package_name
+- sudo apt search package_name
+- sudo apt
+- sudo apt
+- sudo apt
+- sudo apt
+- sudo apt
